@@ -1,7 +1,9 @@
 # Parking Rate Calculator API
 
 This is an API which calculates a parking rate for a specified datetime range, given a list of rates.
-The API only supports JSON over HTTP, and runs locally on port 8080.
+The API only supports JSON over HTTP, and runs locally on port 8080. 
+
+The API uses Spring boot to handle most of the boilerplate REST capabilities, and has a H2 backend to store the rates.
 
 ## Endpoints
 
