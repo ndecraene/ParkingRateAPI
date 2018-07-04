@@ -1,18 +1,18 @@
-#Parking Rate Calculator API
+# Parking Rate Calculator API
 
 This is an API which calculates a parking rate for a specified datetime range, given a list of rates.
 The API only supports JSON over HTTP.
 
-###Endpoints
+### Endpoints
 
-####"/rates"
+#### "/rates"
 
-##### PUT
+##### **PUT**
 
  - The PUT verb takes a request body of that is a list of ParkingRates and stores them to be used to calculate any get requests.
  - This request is idempotent and will overwrite any previous requests to PUT
  
- REQUEST
+ **REQUEST**
  
  - The request body must be a ParkingRateListWrapper, or an object with a list of ParkingRates in it
  - Each rate object must never overlap
@@ -42,13 +42,13 @@ The API only supports JSON over HTTP.
     ```
  
  
-##### GET
+##### **GET**
  - The GET verb is used to get a rate, given a date time range.
  
- REQUEST
+ **REQUEST**
  - This request will always need two parameters "startTime" and "endTime", which are DateTimes in ISO format
  
- RESPONSE
+ **RESPONSE**
  - The request returns a single integer, which will be the dollars and cents of the rate. 
  For example, if a rate is $15.00, then the return value would be 1500.
  - If there is no rate for the range given, or if the range is not entirely encapsulated by a rate, then the service will return a 503, or service unavailable.
